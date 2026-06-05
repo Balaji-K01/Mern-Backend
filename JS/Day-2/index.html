@@ -1,0 +1,45 @@
+<script>
+  /*   const userDetails = (user1) => {
+    console.log("User Name:", user1.name);
+    console.log("User Age:", user1.age);
+    console.log("User City:", user1.city);
+  };
+  const user1 = {
+    name: "Balaji",
+    age: 26,
+    city: "Pondicherry",
+  };
+  userDetails(user1);
+
+  const ageValidation=(age)=>{
+    const isAgeValid=age>=18 ? "age is valid" : "age i s not valid";
+    console.log(isAgeValid);
+  }
+ageValidation(20);
+ageValidation(16); */
+
+  //Task-1
+
+  const addFourNumbers = (...values) => {
+    let total = values.reduce((p, c) => p + c, 0);
+    return total;
+  };
+
+  console.log(addFourNumbers(12, 23, 34, 45));
+
+  const user = {
+    userName: "Balaji",
+    userId: 26,
+    userRole: "Software developer",
+  };
+
+  const updateUserDesignation = () => {
+    const updatedUser = {
+      ...user,
+      userRole: "Senior Software developer",
+    };
+    return updatedUser;
+  };
+
+  console.log(updateUserDesignation());
+</script>

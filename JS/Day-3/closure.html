@@ -1,0 +1,30 @@
+<script>
+    const addData=()=>{
+        let count =0;
+        return inner = ()=>{
+            count++;
+            return console.log(count);
+            
+        }
+      
+    }
+  const counter=addData();
+  counter();
+  counter();
+
+ const account=(cb)=>{
+    let balance=1000;
+    cb(balance)
+ }
+
+const savings=(savAmt)=>(balance)=>{
+    balance+=savAmt
+    console.log(balance);
+}
+const withdraw=(withd)=>(balance)=>{
+    balance-=withd;
+    console.log(balance);
+}
+account(savings(1000));
+account(withdraw(600));
+</script>
