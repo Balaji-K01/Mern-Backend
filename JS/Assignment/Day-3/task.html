@@ -1,0 +1,254 @@
+<script>
+//Task-1
+const bankAccount = () => {
+    let balance = 5000;
+
+    const deposit = (amount) => {
+        balance += amount;
+        console.log("Deposited ",amount);
+    };
+
+    const withdraw = (amount) => {
+        if (amount <= balance) {
+            balance -= amount;
+            console.log("Withdrawn: ",amount);
+        } else {
+            console.log("Insufficient Balance");
+        }
+    };
+
+    const checkBalance = () => {
+        console.log("Current Balance: ",balance);
+    };
+
+    return {
+        deposit,
+        withdraw,
+        checkBalance
+    };
+};
+
+const account = bankAccount();
+
+account.checkBalance();
+account.deposit(2000);
+account.withdraw(1000);
+account.checkBalance();
+
+
+//Task-2
+
+const attendanceCounter = () => {
+    let attendance = 0;
+
+    const markAttendance = () => {
+        attendance++;
+        console.log("Count: ",attendance);
+    };
+
+    return markAttendance;
+};
+
+const student = attendanceCounter();
+
+student();  
+student();  
+student();  
+student();  
+
+//Task-3
+
+const visitorCounter = () => {
+    let visitors = 0;
+
+    const visit = () => {
+        visitors++;
+        console.log(" Visitors:",visitors);
+    };
+
+    return visit;
+};
+const website = visitorCounter();
+
+website();  
+website();  
+website();  
+website();  
+
+//Task-4
+
+const shoppingCart = () => {
+    let itemCount = 0; 
+
+    const addProduct = () => {
+        itemCount++;
+        console.log("Product Added. Total Items:" ,itemCount);
+    };
+
+    const removeProduct = () => {
+        if (itemCount > 0) {
+            itemCount--;
+            console.log("Product Removed. Total Items:",itemCount);
+        } else {
+            console.log("Cart is Empty");
+        }
+    };
+
+    const displayItems = () => {
+        console.log("Total Items in Cart:",itemCount);
+    };
+
+    return {
+        addProduct,
+        removeProduct,
+        displayItems
+    };
+};
+
+const cart = shoppingCart();
+
+cart.addProduct();     
+cart.addProduct();     
+cart.displayItems();   
+cart.removeProduct();  
+cart.displayItems();  
+
+//Task-5
+
+const atmMachine = () => {
+    let balance = 10000;
+
+    const withdraw = (amount) => {
+        if (amount <= balance) {
+            balance -= amount;
+            console.log("Withdrawn: ₹" , amount);
+        } else {
+            console.log("Insufficient Balance");
+        }
+    };
+
+    const checkBalance = () => {
+        console.log("Available Balance: ₹" , balance);
+    };
+
+    return {
+        withdraw,
+        checkBalance
+    };
+};
+
+const atm = atmMachine();
+
+atm.checkBalance();
+atm.withdraw(3000);
+atm.checkBalance();
+atm.withdraw(8000);
+atm.checkBalance();
+
+//Task -6
+
+const Login=()=>{
+    let count =0;
+    const loginCount=()=>{
+        count++;
+        console.log(count);
+    }
+    return loginCount;
+}
+const userLogin=Login();
+userLogin();
+userLogin();
+userLogin();
+
+//Task-7
+
+const processPayment = (callback) => {
+    console.log("Processing Payment...");
+    callback();
+};
+
+const gpay = () => {
+    console.log("Payment Successful through GPay");
+};
+
+const phonePe = () => {
+    console.log("Payment Successful through PhonePe");
+};
+
+const paytm = () => {
+    console.log("Payment Successful through Paytm");
+};
+
+
+processPayment(gpay);
+
+processPayment(phonePe);
+
+processPayment(paytm);
+
+//Task-8
+
+const Profile=(callback)=>{
+    console.log("Loading Profile");
+    callback();
+}
+const logIn=()=>{
+    console.log("Logiing in");
+}
+const resigter=()=>{
+    console.log("Please register ....");
+}
+const Logout=()=>{
+    console.log("Logging out...");
+}
+
+Profile(resigter);
+Profile(logIn);
+Profile(Logout);
+
+//Task-9;
+
+const notify=(callback)=>{
+    console.log("sending notification....");
+    callback()
+}
+const latenotify=()=>{
+    setTimeout(()=>{
+        console.log("Notification sent");
+        
+    },3000)
+}
+notify(latenotify);
+
+//Task-10;
+
+const order=()=>{
+    let orderNumber=0;
+    const items=(callback)=>{
+        orderNumber++;
+        console.log("processing",orderNumber);
+        setTimeout(()=>{
+            callback();
+            console.log("order processed");
+        },4000)
+    }
+    return items;
+}
+
+const mobile=()=>{
+    console.log("Mobile order processeing");
+}
+
+const laptop=()=>{
+    console.log("laptop order processeing");
+}
+
+const earphone=()=>{
+    console.log("Earphone order processeing");
+}
+
+const orderlist=order();
+orderlist(mobile);
+orderlist(laptop);
+
+</script>
