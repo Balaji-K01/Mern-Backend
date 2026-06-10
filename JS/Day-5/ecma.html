@@ -1,0 +1,66 @@
+//Task-1
+
+<script>
+    const studentDetails={
+    name : "Balaji",
+    course: "Mern stack",
+    city : "Pondicherry",
+    Insititue : "SLA"
+}
+
+console.log("----------------");
+console.log(`Student Name : ${studentDetails.name} \n 
+course : ${studentDetails.course} \n
+city : ${studentDetails.city} \n
+insititute : ${studentDetails.Insititue}
+` );
+console.log("------------------");
+
+//Task-2
+
+const employeeDetails=(empName,salary,empId)=>{
+    let employeeSalary=salary*12;
+
+    console.log(`Employee Name : ${empName}`);    
+    console.log(`Employee Id : ${empId}`);    
+    console.log(`Employee salary : ${salary}`);    
+}
+
+employeeDetails("Balaji",40000,1112)
+
+//Task-3
+
+const product=(priceAmt,Disamt)=>{
+    const finalAmt=priceAmt-Disamt;
+    console.log(finalAmt);
+}
+product(1200,400);
+
+//Task-4
+
+const userForm=(name,age,gender,role="Techinal Team")=>{
+        console.log(`User Name : ${name}`);
+        console.log(`Age : ${age}`);
+        console.log(`Role : ${role}`);
+        console.log(`Gender : ${gender}`);
+}
+userForm("Balaji",25,"Male","SDE")
+userForm("Raji",25,"Male")
+
+//Task-5
+
+const Product =()=>{
+
+}
+
+
+//Task-6
+
+const frontEnd=["HTML","Css","Javascript","React"];
+const backEnd=["Node js","Express","Mango db","Mysql"];
+
+const fullstack=[...frontEnd,...backEnd]
+console.log(fullstack);
+
+
+</script>
