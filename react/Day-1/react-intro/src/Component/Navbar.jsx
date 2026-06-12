@@ -19,10 +19,13 @@ const Logo=(()=>{
     )
 })
 
-const Link=(()=>{
+const Links=(()=>{
     return(
         <>
-        
+        <div>
+            <Link>Home</Link>
+            <Link>Skill</Link>
+        </div>
         </>
     )
 })
