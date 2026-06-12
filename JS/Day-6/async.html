@@ -1,0 +1,53 @@
+<script>
+  /*     const getData=()=>{
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("data")
+
+                if(false){
+                    reject("error")
+                }
+            },2000)
+        })
+    }
+
+    getData().then((data)=>{
+        console.log(data);
+    }).catch((error)=>{
+        console.log(error);
+        
+    }) */
+
+  const getData = () => {
+    return fetch("https://dummyjson.com/products").then((res) => {
+      return res.json();
+    });
+  };
+
+  getData()
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  const product = async () => {
+    const items = await fetch("https://dummyjson.com/products");
+    const res = await items.json();
+    console.log(res.products);
+  };
+  product();
+
+  const user = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Balaji");
+      }, 2000);
+    });
+  };
+
+  user().then((data) => {
+    console.log(data);
+  });
+</script>

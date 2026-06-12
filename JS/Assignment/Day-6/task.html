@@ -1,0 +1,115 @@
+<script>
+  //Task-1
+  const student = new Promise((resolve, reject) => {
+    setTimeout((res) => {
+      resolve("Balaji");
+    }, 2000);
+  });
+  student.then((data) => {
+    console.log(data);
+  });
+
+  //Task-2
+  const emp = () => {
+    return new Promise((resolve) => {
+      let res = {
+        id: 1,
+        name: "Balaji",
+        role: "trainer",
+      };
+      resolve(res);
+    });
+  };
+  emp().then((res) => {
+    console.log(res);
+  });
+
+  //Task-3
+  const login = () => {
+    return new Promise(() => {
+      setTimeout(() => {
+        console.log("Login suscees");
+      }, 2000);
+    });
+  };
+  login().then((data) => {
+    console.log(data);
+  });
+
+  //Task-4
+
+  const getProducts = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        let res = ["Laptop", "Mobile", "Keyboard"];
+        resolve(res);
+      }, 2000);
+    });
+  };
+  getProducts().then((data) => {
+    console.log(data);
+  });
+
+  //Task-5
+  const foodOrdered = () => {
+    return new Promise(() => {
+      setTimeout(() => {
+        console.log("Food Delivered");
+      }, 2000);
+    });
+  };
+  foodOrdered().then((data) => {
+    console.log(data);
+  });
+  //Task-6
+  const getUser = () => {
+    return Promise.resolve("User Data");
+  };
+
+  const getOrders = () => {
+    return Promise.resolve("Order Data");
+  };
+
+  const getPayments = () => {
+    return Promise.resolve("Payment Data");
+  };
+
+  getUser()
+    .then((user) => {
+      console.log(user);
+      return getOrders();
+    })
+    .then((orders) => {
+      console.log(orders);
+      return getPayments();
+    })
+    .then((payments) => {
+      console.log(payments);
+      console.log("Completed");
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+
+  //Task-7
+
+  const payment = () => {
+    return new Promise((resolve, reject) => {
+      const status = false;
+
+      if (status) {
+        resolve("Payment Success");
+      } else {
+        reject("Payment Failed");
+      }
+    });
+  };
+
+  payment()
+    .then((message) => {
+      console.log(message);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+</script>
