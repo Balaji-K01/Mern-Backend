@@ -1,5 +1,5 @@
-import Home from "./component/Home";
-import Register from "./component/Register";
+import React from "react";
+import Login from "./assets/component/Login";
 import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
