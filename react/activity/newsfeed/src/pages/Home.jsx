@@ -1,16 +1,44 @@
-
 import { useState, useMemo } from "react";
 
-import BorderGlow from "../component/UI/BorderGlow (1)"
+import BorderGlow from "../component/UI/BorderGlow (1)";
 
-const Home =()=> {
-  
-const news = [
-    { id: 1, title: "AI Revolution Begins", genre: "Technology", date: "2026-07-21", image: "https://via.placeholder.com/300x180" },
-    { id: 2, title: "India Wins Series", genre: "Sports", date: "2026-07-18", image: "https://via.placeholder.com/300x180" },
-    { id: 3, title: "Stock Market Rises", genre: "Business", date: "2026-07-20", image: "https://via.placeholder.com/300x180" },
-    { id: 4, title: "New Health Guidelines", genre: "Health", date: "2026-07-15", image: "https://via.placeholder.com/300x180" },
-    { id: 5, title: "Movie Breaks Records", genre: "Entertainment", date: "2026-07-17", image: "https://via.placeholder.com/300x180" },
+const Home = () => {
+  const news = [
+    {
+      id: 1,
+      title: "AI Revolution Begins",
+      genre: "Technology",
+      date: "2026-07-21",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    },
+    {
+      id: 2,
+      title: "India Wins Series",
+      genre: "Sports",
+      date: "2026-07-18",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    },
+    {
+      id: 3,
+      title: "Stock Market Rises",
+      genre: "Business",
+      date: "2026-07-20",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
+    },
+    {
+      id: 4,
+      title: "New Health Guidelines",
+      genre: "Health",
+      date: "2026-07-15",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+    },
+    {
+      id: 5,
+      title: "Movie Breaks Records",
+      genre: "Entertainment",
+      date: "2026-07-17",
+      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+    },
   ];
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("All");
@@ -22,13 +50,13 @@ const news = [
     let data = [...news];
 
     if (search) {
-      data = data.filter(item =>
-        item.title.toLowerCase().includes(search.toLowerCase())
+      data = data.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
     if (genre !== "All") {
-      data = data.filter(item => item.genre === genre);
+      data = data.filter((item) => item.genre === genre);
     }
 
     if (sortDate === "latest") {
@@ -44,11 +72,11 @@ const news = [
     }
 
     if (filterDate) {
-  data = data.filter(item => item.date === filterDate);
-}
+      data = data.filter((item) => item.date === filterDate);
+    }
 
     return data;
-  }, [search, genre, sortDate, sortTitle,filterDate]);
+  }, [search, genre, sortDate, sortTitle, filterDate]);
 
   return (
     <div className="p-6 bg-slate-950 text-white">
@@ -76,12 +104,12 @@ const news = [
         </select>
 
         <input
-            type="date"
-            className="border p-2 rounded"
-            value={filterDate}
-            onChange={(e) => setFilterDate(e.target.value)}
-            />
-            
+          type="date"
+          className="border p-2 rounded"
+          value={filterDate}
+          onChange={(e) => setFilterDate(e.target.value)}
+        />
+
         <select
           className="border p-2 rounded"
           value={sortDate}
@@ -104,9 +132,13 @@ const news = [
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-slate-950 text-white">
-        {filteredNews.map(item => (
+        {filteredNews.map((item) => (
           <div key={item.id} className="border rounded-lg shadow p-4">
-            <img src={item.image} alt={item.title} className="w-full h-40 object-cover rounded" />
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-40 object-cover rounded"
+            />
             <h2 className="text-xl font-bold mt-3">{item.title}</h2>
             <p className="text-gray-600">{item.genre}</p>
             <p className="text-sm text-gray-500">{item.date}</p>
@@ -115,5 +147,5 @@ const news = [
       </div>
     </div>
   );
-}
-export default Home
+};
+export default Home;
