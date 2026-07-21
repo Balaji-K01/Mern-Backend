@@ -8,7 +8,7 @@ const App = () => {
   const fetchData = async () => {
     const dataFetch = await fetch("https://dummyjson.com/products?limit=6");
     const res = await dataFetch.json();
-    setDataShow(res.products);
+    setDataShow(res.products.category);
   };
 
   useEffect(() => {
