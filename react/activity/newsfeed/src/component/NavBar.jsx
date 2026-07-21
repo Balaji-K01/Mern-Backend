@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <nav className="flex items-center justify-between px-6 py-4 shadow-md w-full relative">
-      <h1 className="text-xl font-bold">ShopiFy</h1>
+      <h1 className="text-xl font-bold">News</h1>
 
       <div className="hidden md:flex items-center gap-20">
         {navLinks.map(({ to, label }) => (
